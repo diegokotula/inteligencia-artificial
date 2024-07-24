@@ -42,3 +42,4 @@ const lapis = {
    cor: 'Grafite',
    temBorrachaAtras: false
 }
+ 
