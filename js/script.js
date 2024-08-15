@@ -1,4 +1,4 @@
-import { aleatorio } from "./aleatorio.js";
+import { aleatorio, nome } from "./aleatorio.js";
 import { perguntas } from "./perguntas.js";
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
@@ -12,12 +12,18 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Isso é assustador!",
-                afirmacao: "No início ficou com medo do que essa tecnologia pode fazer. "
+                afirmacao: [
+                    "No início ficou com medo do que essa tecnologia pode fazer. "
+                ],
+                proxima: 1,
             },
             {
                 texto: "Isso é maravilhoso!",
-                afirmacao: "Quis saber como usar IA no seu dia a dia."
-            }
+                afirmacao: [
+                    "Quis saber como usar IA no seu dia a dia."
+                ],
+                proxima:2,
+                },
         ]
     },
     {
@@ -34,42 +40,54 @@ const perguntas = [
         ]
     },
     {
-        enunciado: "Depois que Gabriel escreveu o trabalho, teve uma discussão sobre o impacto da IA no trabalho do futuro. O que Gabriel faz?",
+        enunciado: "Depois que voce escreveu o trabalho, teve uma discussão sobre o impacto da IA no trabalho do futuro. O que Gabriel faz?",
         alternativas: [
             {
                 texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
-            },
+                afirmacao: [
+                    "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
+                ],
+                proxima: 1,
+                },
             {
                 texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
-            }
+                afirmacao: [
+                    "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
+                ],
+                proxima: 2,
+                },
         ]
     },
     {
-        enunciado: "Ao final da discussão, Gabriel precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Ao final da discussão, voce precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
         alternativas: [
             {
                 texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
-            },
+                afirmacao: [
+                    "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
+                ],: 1,
+                },
             {
                 texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
-            }
+                afirmacao: [
+                    "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                ],: 2,
+                },
         ]
     },
     {
-        enunciado: "Gabriel tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que Gabriel faz? ",
+        enunciado: "voce tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que voce faz? ",
         alternativas: [
             {
                 texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
                 afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
-            },
+                },
             {
                 texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
-            }
+                afirmacao: [
+                    "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
+                ],: 2,
+                },
         ]
     },
 ];
@@ -123,10 +141,17 @@ function aleatorio (lista){
     const posicao = Math.floor(Math.random()*lista.length);
     return lista [posicao];
 }
+export const nome = aleatorio(nomes);
 function jogaNovamente () {
     atual = 0;
     historiaFinal ="";
     caixaResultado.classList.remove("mostrar");
     mostraPergunta ();
 }
+function susbstituiNome ({
+for (pergunta of perguntas){
+    pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+   }
+}
+susbstituiNome();
 mostraPergunta();
