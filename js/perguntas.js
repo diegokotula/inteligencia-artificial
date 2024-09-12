@@ -19,7 +19,7 @@ export const perguntas = [
         ]
     },
     {
-        enunciado: "Para a gente foi uma grande vitoria, os alunos do outro colégio sempre ficavam sempre falando que eram os melhores, mas mudamos isso, o que você acha disso? "
+        enunciado: "Para a gente foi uma grande vitoria, os alunos do outro colégio sempre ficavam sempre falando que eram os melhores, mas mudamos isso, o que você acha disso? ",
         alternativas: [
             {
                 texto: "Vocês mostraram quem manda!",
