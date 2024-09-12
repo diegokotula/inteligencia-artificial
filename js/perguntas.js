@@ -1,18 +1,18 @@
 export const perguntas = [
     {
-        enunciado: " A vitoria do jei's de 2024 foi a melhor sensação da nossa turma",
+        enunciado: " A vitoria do jei's de 2024 foi a melhor sensação da nossa turma,foi a primeira vez a 10 anos que ganhamos a competição",
         alternativas: [
             {
-                texto: "Isso é assustador!",
+                texto: "sensacional!",
                 afirmacao: [
-                    "No início ficou com medo do que essa tecnologia pode fazer. "
+                    "No início fiquei com medo se não ganhassemos. "
                 ],
                 proxima: 1,
                 },
             {
-                texto: "Isso é maravilhoso!",
+                texto: "Não é tao legal!",
                 afirmacao: [
-                    "Quis saber como usar IA no seu dia a dia."
+                    "Mas com o time que tinha não precisava se preocupar."
                 ],
                 proxima: 2,
                 }
