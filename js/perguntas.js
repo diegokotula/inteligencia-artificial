@@ -10,7 +10,7 @@ export const perguntas = [
                 proxima: 1,
                 },
             {
-                texto: "Não é preocupante, não acham?",
+                texto: "Muito legal!",
                 afirmacao: [
                     "Mas com o time que tinhamos não precisava se preocupar"
                 ],
